@@ -9,11 +9,10 @@ export default function Games() {
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-brand-500">Our Games</h2>
           <p className="mt-5 font-display text-3xl font-semibold leading-tight md:text-4xl">
-            Easy to learn, fun to master.
+            What we&apos;re working on.
           </p>
           <p className="mt-5 leading-relaxed text-neutral-600">
-            We aim to deliver the ultimate mobile experience: satisfying puzzles, charming worlds and gameplay that
-            respects your time.
+            We&apos;re currently working on our first game. More details will follow as it gets closer to release.
           </p>
         </div>
 
@@ -31,8 +30,8 @@ export default function Games() {
               </div>
             </div>
             <p className="mt-6 max-w-md leading-relaxed text-neutral-600">
-              A colourful puzzle adventure we&apos;re building right now. Sorting, matching and clearing has never
-              felt this satisfying. Stay tuned for the soft launch.
+              A colourful puzzle game about sorting, matching and clearing. It&apos;s still early, so stay tuned for
+              updates.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <StoreBadge store="apple" />

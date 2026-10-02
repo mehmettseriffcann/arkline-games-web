@@ -12,7 +12,6 @@ Design references: [Dream Games](https://dreamgames.com), [Peak](https://peak.co
 | About Us | `app/components/About.tsx` | Dream Games — image + short copy |
 | Our Games | `app/components/Games.tsx` | Circle — icon, pitch, store badges, phone mockup |
 | How We Work | `app/components/Culture.tsx` | Peak — value cards |
-| Careers | `app/components/Careers.tsx` | Dream / Gram — brand-coloured CTA |
 
 Brand colours and fonts live in `app/globals.css` (`@theme`) and `app/layout.tsx`.
 To publish a game, add its store URLs via `<StoreBadge store="apple" href="..." />` in `Games.tsx`.

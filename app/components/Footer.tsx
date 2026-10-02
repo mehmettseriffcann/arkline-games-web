@@ -1,5 +1,5 @@
 import Logo from "./Logo";
-import { navLinks, CONTACT_EMAIL, CAREERS_EMAIL } from "./links";
+import { navLinks, CONTACT_EMAIL } from "./links";
 
 // Dream Games style: compact footer that repeats the nav, plus contact and legal links
 export default function Footer() {
@@ -12,7 +12,7 @@ export default function Footer() {
               <Logo />
             </a>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
-              An independent mobile game studio making games to be played for years.
+              A small, independent mobile game studio.
             </p>
           </div>
 
@@ -32,7 +32,7 @@ export default function Footer() {
             <div>
               <p className="mb-5 text-xs font-semibold uppercase tracking-wider text-white/50">Contact</p>
               <ul className="space-y-3">
-                {[CONTACT_EMAIL, CAREERS_EMAIL].map((email) => (
+                {[CONTACT_EMAIL].map((email) => (
                   <li key={email}>
                     <a href={`mailto:${email}`} className="text-sm text-white/75 transition-colors hover:text-white">
                       {email}

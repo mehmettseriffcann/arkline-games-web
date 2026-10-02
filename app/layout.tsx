@@ -14,10 +14,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Arkline Games | Mobile Game Studio",
   description:
-    "Arkline Games is an independent mobile game studio crafting polished, joyful puzzle games meant to be played for years.",
+    "Arkline Games is a small, independent mobile game studio making puzzle games.",
   openGraph: {
     title: "Arkline Games",
-    description: "Mobile games made to be played for years.",
+    description: "A small, independent mobile game studio.",
     type: "website",
   },
 };
