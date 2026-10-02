@@ -1,52 +1,58 @@
-"use client";
+import Logo from "./Logo";
+import { navLinks, CONTACT_EMAIL, CAREERS_EMAIL } from "./links";
 
-// Gram Games / Dream Games footer style
+// Dream Games style: compact footer that repeats the nav, plus contact and legal links
 export default function Footer() {
   return (
-    <footer className="bg-neutral-950 border-t border-neutral-900">
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="flex flex-col md:flex-row justify-between gap-12 mb-16">
+    <footer className="bg-ink text-white">
+      <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="flex flex-col justify-between gap-12 md:flex-row">
           <div>
-            <p className="font-bold text-white text-sm mb-3">Arkline Games</p>
-            <p className="text-xs text-neutral-600 max-w-xs leading-relaxed">
-              A mobile game studio.
+            <a href="#" aria-label="Arkline Games home" className="text-3xl text-white">
+              <Logo />
+            </a>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
+              An independent mobile game studio making games to be played for years.
             </p>
           </div>
 
           <div className="flex gap-16">
             <div>
-              <p className="text-xs text-neutral-700 uppercase tracking-widest mb-5">Studio</p>
+              <p className="mb-5 text-xs font-semibold uppercase tracking-wider text-white/50">Studio</p>
               <ul className="space-y-3">
-                {[["About", "#about"], ["Games", "#games"], ["Culture", "#culture"]].map(([l, h]) => (
-                  <li key={l}>
-                    <a href={h} className="text-xs text-neutral-500 hover:text-white transition-colors">{l}</a>
+                {navLinks.map(({ label, href }) => (
+                  <li key={href}>
+                    <a href={href} className="text-sm text-white/75 transition-colors hover:text-white">
+                      {label}
+                    </a>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <p className="text-xs text-neutral-700 uppercase tracking-widest mb-5">Contact</p>
+              <p className="mb-5 text-xs font-semibold uppercase tracking-wider text-white/50">Contact</p>
               <ul className="space-y-3">
-                <li>
-                  <a href="mailto:info@arklinegames.com" className="text-xs text-neutral-500 hover:text-white transition-colors">
-                    info@arklinegames.com
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:careers@arklinegames.com" className="text-xs text-neutral-500 hover:text-white transition-colors">
-                    careers@arklinegames.com
-                  </a>
-                </li>
+                {[CONTACT_EMAIL, CAREERS_EMAIL].map((email) => (
+                  <li key={email}>
+                    <a href={`mailto:${email}`} className="text-sm text-white/75 transition-colors hover:text-white">
+                      {email}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-neutral-900 pt-8 flex flex-col sm:flex-row justify-between gap-4">
-          <p className="text-xs text-neutral-700">© {new Date().getFullYear()} Arkline Games</p>
+        <div className="mt-16 flex flex-col justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+          <p className="text-xs text-white/50">© {new Date().getFullYear()} Arkline Games</p>
           <div className="flex gap-6">
-            <span className="text-xs text-neutral-700 hover:text-neutral-500 cursor-pointer transition-colors">Privacy</span>
-            <span className="text-xs text-neutral-700 hover:text-neutral-500 cursor-pointer transition-colors">Terms</span>
+            <a href={`mailto:${CONTACT_EMAIL}?subject=Privacy`} className="text-xs text-white/50 transition-colors hover:text-white">
+              Privacy Policy
+            </a>
+            <a href={`mailto:${CONTACT_EMAIL}?subject=Terms`} className="text-xs text-white/50 transition-colors hover:text-white">
+              Terms of Service
+            </a>
           </div>
         </div>
       </div>

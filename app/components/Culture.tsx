@@ -1,38 +1,45 @@
-"use client";
+import { Users, Sparkles, LineChart } from "lucide-react";
 
-// Peak style: white bg, image left, simple text right
+// Peak "How We Work" style: short intro + three value cards
+const values = [
+  {
+    icon: Users,
+    title: "Small teams, real ownership",
+    text: "Everyone contributes directly to the product. No layers, no hand-offs, just people building games together.",
+  },
+  {
+    icon: Sparkles,
+    title: "Quality over quantity",
+    text: "We would rather ship one game players love for years than ten they forget in a week.",
+  },
+  {
+    icon: LineChart,
+    title: "Data-informed creativity",
+    text: "Bold ideas, validated by players. We test, measure and iterate until every detail feels right.",
+  },
+];
+
 export default function Culture() {
   return (
-    <section id="culture" className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          {/* Text */}
-          <div>
-            <p className="text-xs text-neutral-400 uppercase tracking-widest mb-5">Culture</p>
-            <h2 className="text-4xl font-bold text-neutral-900 leading-tight mb-7">
-              How we work.
-            </h2>
-            <p className="text-sm text-neutral-500 leading-relaxed mb-4">
-              We work in small teams where everyone contributes directly to the product.
-            </p>
-            <p className="text-sm text-neutral-500 leading-relaxed mb-10">
-              If you'd like to join us, we'd love to hear from you.
-            </p>
-            <a
-              href="mailto:careers@arklinegames.com"
-              className="inline-block text-sm font-medium bg-neutral-900 text-white px-6 py-3 hover:bg-neutral-700 transition-colors"
-            >
-              Get in touch
-            </a>
-          </div>
+    <section id="culture" className="bg-white py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="max-w-2xl">
+          <h2 className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-brand-500">How We Work</h2>
+          <p className="mt-5 font-display text-3xl font-semibold leading-tight md:text-4xl">
+            People are at the core of everything we do.
+          </p>
+        </div>
 
-          {/* Image */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80&auto=format&fit=crop"
-            alt="Studio"
-            className="w-full aspect-[4/3] object-cover"
-          />
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {values.map(({ icon: Icon, title, text }) => (
+            <div key={title} className="rounded-3xl border border-neutral-100 bg-neutral-50 p-8 transition hover:-translate-y-1 hover:shadow-lg">
+              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-brand-500 text-white">
+                <Icon size={22} />
+              </div>
+              <h3 className="mt-6 font-display text-xl font-semibold">{title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-600">{text}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
