@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Logo from "./Logo";
 import { navLinks, CONTACT_EMAIL } from "./links";
 
@@ -8,9 +9,9 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="flex flex-col justify-between gap-12 md:flex-row">
           <div>
-            <a href="#" aria-label="Arkline Games home" className="text-3xl text-white">
+            <Link href="/" aria-label="Arkline Games home" className="text-3xl text-white">
               <Logo />
-            </a>
+            </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
               A small, independent mobile game studio.
             </p>
@@ -47,9 +48,9 @@ export default function Footer() {
         <div className="mt-16 flex flex-col justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-xs text-white/50">© {new Date().getFullYear()} Arkline Games</p>
           <div className="flex gap-6">
-            <a href={`mailto:${CONTACT_EMAIL}?subject=Privacy`} className="text-xs text-white/50 transition-colors hover:text-white">
+            <Link href="/privacy" className="text-xs text-white/50 transition-colors hover:text-white">
               Privacy Policy
-            </a>
+            </Link>
             <a href={`mailto:${CONTACT_EMAIL}?subject=Terms`} className="text-xs text-white/50 transition-colors hover:text-white">
               Terms of Service
             </a>

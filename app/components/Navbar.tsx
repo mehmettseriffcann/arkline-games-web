@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import Logo from "./Logo";
 import { navLinks } from "./links";
 
 // Dream Games style: white bar, logo left, uppercase links right
-export default function Navbar() {
+export default function Navbar({ alwaysSolid = false }: { alwaysSolid?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -17,7 +18,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const solid = scrolled || open;
+  const solid = alwaysSolid || scrolled || open;
 
   return (
     <header
@@ -26,9 +27,9 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <a href="#" aria-label="Arkline Games home" className={`text-3xl transition-colors ${solid ? "text-brand-500" : "text-white"}`}>
+        <Link href="/" aria-label="Arkline Games home" className={`text-3xl transition-colors ${solid ? "text-brand-500" : "text-white"}`}>
           <Logo />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map(({ label, href }) => (
