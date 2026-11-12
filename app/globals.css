@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-50: #f1efff;
-  --color-brand-100: #e4e0ff;
-  --color-brand-400: #8f7bff;
-  --color-brand-500: #6c4dff;
-  --color-brand-600: #5a36f2;
-  --color-brand-700: #4824cc;
-  --color-ink: #14112b;
+  --color-brand-50: #f6effa;
+  --color-brand-100: #ecdcf5;
+  --color-brand-400: #a25fd1;
+  --color-brand-500: #7b2fae;
+  --color-brand-600: #652491;
+  --color-brand-700: #4a1563;
+  --color-ink: #1d0a26;
   --font-display: var(--font-fredoka), ui-rounded, system-ui, sans-serif;
   --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
 }

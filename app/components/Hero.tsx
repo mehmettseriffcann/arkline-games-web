@@ -22,7 +22,7 @@ export default function Hero() {
         className="object-cover"
       />
       <div className="absolute inset-0 bg-brand-600/80 mix-blend-multiply" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(143,123,255,0.6)_0%,transparent_55%),radial-gradient(circle_at_80%_90%,rgba(72,36,204,0.7)_0%,transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(162,95,209,0.55)_0%,transparent_55%),radial-gradient(circle_at_80%_90%,rgba(42,8,50,0.8)_0%,transparent_50%)]" />
 
       {shapes.map((s, i) => (
         <span
