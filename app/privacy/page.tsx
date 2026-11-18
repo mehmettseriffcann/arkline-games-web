@@ -1,22 +1,16 @@
 import type { Metadata } from "next";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import { COMPANY_NAME, CONTACT_EMAIL } from "../components/links";
+import Link from "next/link";
+import LegalPage, { Email, type LegalSection } from "../components/LegalPage";
+import { COMPANY_NAME } from "../components/links";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Arkline Games",
   description: "How Arkline Games collects, uses and protects personal data.",
 };
 
-const LAST_UPDATED = "November 6, 2026";
+const LAST_UPDATED = "November 18, 2026";
 
-const Email = () => (
-  <a href={`mailto:${CONTACT_EMAIL}`} className="font-medium text-brand-600 underline underline-offset-2 hover:text-brand-700">
-    {CONTACT_EMAIL}
-  </a>
-);
-
-const sections: { id: string; title: string; body: React.ReactNode }[] = [
+const sections: LegalSection[] = [
   {
     id: "introduction",
     title: "Introduction",
@@ -219,7 +213,12 @@ const sections: { id: string; title: string; body: React.ReactNode }[] = [
           discriminate against you for exercising these rights.
         </p>
         <p>
-          To exercise any of these rights, email us at <Email />. We may need to verify your identity before
+          To exercise any of these rights, email us at <Email />. To request deletion of your data, you can also
+          use our{" "}
+          <Link href="/data-deletion" className="font-medium text-brand-600 underline underline-offset-2">
+            data deletion request form
+          </Link>
+          . We may need to verify your identity before
           responding, and we will reply within the time limits set by applicable law.
         </p>
       </>
@@ -259,47 +258,5 @@ const sections: { id: string; title: string; body: React.ReactNode }[] = [
 ];
 
 export default function PrivacyPage() {
-  return (
-    <div className="min-h-screen">
-      <Navbar alwaysSolid />
-      <main className="bg-white pt-16">
-        <header className="bg-brand-50">
-          <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-            <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-brand-500">Legal</p>
-            <h1 className="mt-4 font-display text-4xl font-semibold md:text-5xl">Privacy Policy</h1>
-            <p className="mt-4 text-sm text-neutral-500">Last updated: {LAST_UPDATED}</p>
-          </div>
-        </header>
-
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-[240px_1fr] lg:gap-16 md:py-20">
-          <nav aria-label="Table of contents" className="lg:sticky lg:top-24 lg:self-start">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-neutral-400">Contents</p>
-            <ol className="space-y-2.5 text-sm">
-              {sections.map(({ id, title }, i) => (
-                <li key={id}>
-                  <a href={`#${id}`} className="text-neutral-600 transition-colors hover:text-brand-600">
-                    <span className="mr-2 tabular-nums text-neutral-400">{i + 1}.</span>
-                    {title}
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </nav>
-
-          <article className="max-w-3xl space-y-14 leading-relaxed text-neutral-700 [&_h3]:mb-2 [&_h3]:mt-6 [&_h3]:font-display [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-ink [&_li]:pl-1 [&_p]:mt-4 [&_strong]:text-ink [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5">
-            {sections.map(({ id, title, body }, i) => (
-              <section key={id} id={id} className="scroll-mt-24">
-                <h2 className="font-display text-2xl font-semibold text-ink">
-                  <span className="mr-2 text-brand-500">{i + 1}.</span>
-                  {title}
-                </h2>
-                <div className="[&>address]:mt-4">{body}</div>
-              </section>
-            ))}
-          </article>
-        </div>
-      </main>
-      <Footer />
-    </div>
-  );
+  return <LegalPage title="Privacy Policy" lastUpdated={LAST_UPDATED} sections={sections} />;
 }

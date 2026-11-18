@@ -47,13 +47,16 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-xs text-white/50">© {new Date().getFullYear()} Arkline Games</p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
             <Link href="/privacy" className="text-xs text-white/50 transition-colors hover:text-white">
               Privacy Policy
             </Link>
-            <a href={`mailto:${CONTACT_EMAIL}?subject=Terms`} className="text-xs text-white/50 transition-colors hover:text-white">
+            <Link href="/terms" className="text-xs text-white/50 transition-colors hover:text-white">
               Terms of Service
-            </a>
+            </Link>
+            <Link href="/data-deletion" className="text-xs text-white/50 transition-colors hover:text-white">
+              Data Deletion
+            </Link>
           </div>
         </div>
       </div>

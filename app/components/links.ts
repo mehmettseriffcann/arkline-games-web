@@ -5,4 +5,5 @@ export const navLinks = [
 ] as const;
 
 export const CONTACT_EMAIL = "info@arklinegames.com";
+export const SUPPORT_EMAIL = "support@arklinegames.com";
 export const COMPANY_NAME = "Arkline Teknoloji Sanayi Ticaret Limited Şirketi";
