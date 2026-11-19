@@ -2,6 +2,7 @@ export const navLinks = [
   { label: "About Us", href: "/#about" },
   { label: "Games", href: "/#games" },
   { label: "How We Work", href: "/#culture" },
+  { label: "Support", href: "/support" },
 ] as const;
 
 export const CONTACT_EMAIL = "info@arklinegames.com";
