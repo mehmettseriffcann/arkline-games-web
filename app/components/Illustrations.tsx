@@ -19,52 +19,6 @@ function Sparkle({ x, y, s = 1, delay = 0, color = "currentColor" }: { x: number
   );
 }
 
-/** Hero background: game-pieces doodles in white, drawn in and drifting */
-export function HeroDoodles({ className = "" }: P) {
-  return (
-    <svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" className={`line-draw text-white ${className}`} aria-hidden="true">
-      <g {...line} stroke="currentColor" strokeOpacity="0.55" strokeWidth="3.5">
-        {/* wavy paths */}
-        <path pathLength={1} style={d(0)} d="M-20 640C200 520 320 700 520 600S860 420 1020 520 1300 640 1460 520" />
-        <path pathLength={1} style={d(0.3)} d="M-20 180C160 120 260 260 420 210S700 60 860 140" />
-        {/* controller */}
-        <g className="animate-float" style={{ animationDelay: "0.4s" }}>
-          <path pathLength={1} style={d(0.4)} d="M1090 150h140c40 0 62 30 70 70l14 70c6 30-26 46-46 24l-34-38h-148l-34 38c-20 22-52 6-46-24l14-70c8-40 30-70 70-70Z" />
-          <path pathLength={1} style={d(0.9)} d="M1110 220h40M1130 200v40" />
-          <circle pathLength={1} style={d(1)} cx="1220" cy="208" r="7" />
-          <circle pathLength={1} style={d(1.1)} cx="1246" cy="232" r="7" />
-        </g>
-        {/* puzzle piece */}
-        <g className="animate-float" style={{ animationDelay: "1.4s" }}>
-          <path
-            pathLength={1}
-            style={d(0.6)}
-            d="M170 330h50c0-24 40-24 40 0h50v50c24 0 24 40 0 40v50h-50c0 24-40 24-40 0h-50v-50c-24 0-24-40 0-40Z"
-          />
-        </g>
-        {/* heart */}
-        <path pathLength={1} style={d(0.8)} className="animate-wiggle" d="M1210 560c-30-30-80 0-50 40l50 44 50-44c30-40-20-70-50-40Z" />
-        {/* cube */}
-        <g className="animate-float" style={{ animationDelay: "2.2s" }}>
-          <path pathLength={1} style={d(1)} d="M300 620l60-32 60 32-60 32Z M300 620v64l60 32v-64 M420 620v64l-60 32" />
-        </g>
-        {/* tiles grid */}
-        <g className="animate-float" style={{ animationDelay: "0.8s" }}>
-          <rect pathLength={1} style={d(1.2)} x="980" y="610" width="44" height="44" rx="12" />
-          <rect pathLength={1} style={d(1.3)} x="1036" y="610" width="44" height="44" rx="12" />
-          <rect pathLength={1} style={d(1.4)} x="980" y="666" width="44" height="44" rx="12" />
-        </g>
-        <circle pathLength={1} style={d(1.2)} cx="560" cy="130" r="22" />
-        <path pathLength={1} style={d(1.4)} d="M840 690l18 30h-36Z" />
-      </g>
-      <Sparkle x={640} y={240} s={1.2} />
-      <Sparkle x={1340} y={420} delay={0.8} />
-      <Sparkle x={120} y={560} s={0.8} delay={1.6} />
-      <Sparkle x={900} y={110} s={0.9} delay={0.4} />
-    </svg>
-  );
-}
-
 /** About: a phone with a puzzle board, a pencil and floating tiles */
 export function StudioIllustration({ className = "" }: P) {
   return (
@@ -100,18 +54,27 @@ export function StudioIllustration({ className = "" }: P) {
   );
 }
 
-/** How We Work: small team */
+/** How We Work: small team, three people working around one laptop */
 export function TeamIllustration({ className = "" }: P) {
   return (
     <svg viewBox="0 0 200 120" className={`line-draw ${className}`} aria-hidden="true">
+      {/* ideas floating above the team */}
+      <rect x="62" y="14" width="14" height="14" rx="4" fill="#fcd34d" className="animate-wiggle" />
+      <circle cx="138" cy="21" r="7" fill="#f472b6" className="animate-twinkle" style={{ animationDelay: "1s" }} />
+      <Sparkle x={100} y={16} s={0.6} color="var(--color-brand-500)" />
       <g {...line} stroke="var(--color-ink)">
-        <circle pathLength={1} style={d(0)} cx="60" cy="46" r="16" />
-        <path pathLength={1} style={d(0.3)} d="M30 104c0-20 14-34 30-34s30 14 30 34" />
-        <circle pathLength={1} style={d(0.2)} cx="140" cy="46" r="16" />
-        <path pathLength={1} style={d(0.5)} d="M110 104c0-20 14-34 30-34s30 14 30 34" />
-        <path pathLength={1} style={d(0.8)} d="M86 30c8-10 20-10 28 0" strokeOpacity="0.4" />
+        <circle pathLength={1} style={d(0)} cx="45" cy="50" r="11" />
+        <path pathLength={1} style={d(0.3)} d="M27 100c0-15 8-26 18-26s18 11 18 26" />
+        <circle pathLength={1} style={d(0.15)} cx="155" cy="50" r="11" />
+        <path pathLength={1} style={d(0.45)} d="M137 100c0-15 8-26 18-26s18 11 18 26" />
+        <circle pathLength={1} style={d(0.1)} cx="100" cy="42" r="11" />
+        <path pathLength={1} style={d(0.4)} d="M82 92c0-15 8-26 18-26s18 11 18 26" />
+        {/* laptop in front of the middle person */}
+        <rect pathLength={1} style={d(0.7)} x="78" y="72" width="44" height="26" rx="4" fill="white" />
+        <path pathLength={1} style={d(0.9)} d="M14 100h172" />
       </g>
-      <path className="animate-wiggle" fill="#f472b6" d="M100 16c-6-6-16 0-10 8l10 8 10-8c6-8-4-14-10-8Z" />
+      <rect x="88" y="79" width="11" height="11" rx="3" fill="#6ee7b7" className="animate-twinkle" style={{ animationDuration: "3s" }} />
+      <rect x="102" y="79" width="11" height="11" rx="3" fill="#7dd3fc" className="animate-twinkle" style={{ animationDuration: "3s", animationDelay: "0.6s" }} />
     </svg>
   );
 }
