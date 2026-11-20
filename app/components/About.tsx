@@ -1,19 +1,14 @@
-import Image from "next/image";
+import Reveal from "./Reveal";
+import { StudioIllustration } from "./Illustrations";
 
-// Dream Games style: image left, uppercase section title + short copy right
+// Dream Games style: illustration left, uppercase section title + short copy right
 export default function About() {
   return (
     <section id="about" className="bg-white py-24 md:py-32">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 px-6 lg:grid-cols-2 lg:gap-20">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
-          <Image
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80&auto=format&fit=crop"
-            alt="The Arkline Games team working together"
-            fill
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover"
-          />
-        </div>
+        <Reveal className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-brand-50">
+          <StudioIllustration className="absolute inset-0 h-full w-full p-6" />
+        </Reveal>
 
         <div>
           <h2 className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-brand-500">About Us</h2>
