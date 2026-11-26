@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     description: "A small, independent mobile game studio.",
     type: "website",
   },
+  other: {
+    "facebook-domain-verification": "4v6c13fhjh5hcgoor66vtmcoun7w1n",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
